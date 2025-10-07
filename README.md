@@ -8,14 +8,14 @@ Flavio Luiz Vicco - RM 361664
 
 ### 1️⃣ Limpeza e formatação dos dados: transforma o dataset original em pares input → resumo.
 
-2️⃣ Geração automática de rótulos (resumos): usa um modelo pré-treinado (BART) para gerar exemplos de saída.
+### 2️⃣ Geração automática de rótulos (resumos): usa um modelo pré-treinado (BART) para gerar exemplos de saída.
 
-3️⃣ Tokenização: converte textos em IDs para o modelo T5.
+### 3️⃣ Tokenização: converte textos em IDs para o modelo T5.
 
-4️⃣ Treinamento (fine-tuning): ajusta o modelo t5-base para aprender a resumir descrições de produtos.
+### 4️⃣ Treinamento (fine-tuning): ajusta o modelo t5-base para aprender a resumir descrições de produtos.
 
-5️⃣ Avaliação: mede a qualidade dos resumos com a métrica ROUGE.
+### 5️⃣ Avaliação: mede a qualidade dos resumos com a métrica ROUGE.
 
-6️⃣ Validação manual: testa o modelo em exemplos conhecidos e novos.
+### 6️⃣ Validação manual: testa o modelo em exemplos conhecidos e novos.
 
-7️⃣ Salvamento e reuso: salva o modelo afinado para uso futuro.
+### 7️⃣ Salvamento e reuso: salva o modelo afinado para uso futuro.
