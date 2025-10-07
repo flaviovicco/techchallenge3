@@ -60,48 +60,17 @@ with open(arquivo_jsonl, "w", encoding="utf-8") as f:
 print("Dataset exportado para JSONL com sucesso!")
 print("Caminho:", arquivo_jsonl)
 
-!pip install transformers accelerate sentencepiece -q
+
+# !pip install transformers accelerate sentencepiece -q
 
 from transformers import pipeline
 import json
 
 """**Carregar modelo de sumarização (BART)**"""
 
-# Carregar modelo de sumarização (BART)
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
 
-def summarize_amazon(jsonl_file, output_file="amazon_summaries.json"):
-    summaries = []
+# !pip install transformers accelerate sentencepiece tqdm -q
 
-    with open(jsonl_file, 'r') as f:
-        for line in f:
-            item = json.loads(line)
-            title = item["title"]
-            content = item["content"]
-
-            text = f"Title: {title}\nDescription: {content}"
-            summary = summarizer(
-                text,
-                max_length=50,   # limite máximo de tokens no resumo
-                min_length=15,   # mínimo de tokens no resumo
-                do_sample=False
-            )[0]["summary_text"]
-
-            summaries.append({
-                "title": title,
-                "content": content,
-                "summary": summary
-            })
-
-    with open(output_file, 'w') as out:
-        json.dump({"amazon_summaries": summaries}, out, indent=2)
-
-# exemplo de chamada
-summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/tst2.json")
-
-"""NOVO TESTE"""
-
-!pip install transformers accelerate sentencepiece tqdm -q
 import json
 from tqdm import tqdm
 from transformers import pipeline
@@ -171,7 +140,7 @@ def summarize_amazon(jsonl_file, output_file="amazon_summaries_stream.json", flu
 summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/tst2.json")
 
 
-!pip install transformers datasets evaluate rouge_score sentencepiece -q
+# !pip install transformers datasets evaluate rouge_score sentencepiece -q
 
 """**Carregar o Dataset**"""
 
@@ -324,7 +293,7 @@ from transformers import pipeline
 summarizer = pipeline("summarization", model="/content/my-t5-amazon", tokenizer="/content/my-t5-amazon")
 
 # --------------------------
-#  1. Validação manual
+# 🔸 1. Validação manual
 # --------------------------
 def validate_summary(title, description, expected_summary=None):
     text = f"summarize: Title: {title}. Description: {description}"
@@ -357,7 +326,7 @@ validate_summary(
 )
 
 # --------------------------
-#  2. Validação automática com ROUGE
+# 🔸 2. Validação automática com ROUGE
 # --------------------------
 rouge = evaluate.load("rouge")
 
