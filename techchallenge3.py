@@ -60,93 +60,6 @@ with open(arquivo_jsonl, "w", encoding="utf-8") as f:
 print("Dataset exportado para JSONL com sucesso!")
 print("Caminho:", arquivo_jsonl)
 
-# !pip install ollama
-# !pip install -q transformers torch
-
-# ollama run llama2
-# !ollama serve &
-
-# !ollama serve
-# !ollama start
-# !ollama --version
-
-# !curl -fsSL https://ollama.com/install.sh | sh
-# !ollama serve &
-# !ollama pull llama3
-
-# !wich ollama
-# !ollama --help
-
-# import json
-# import ollama
-
-# def summarize_amazon(jsonl_file, output_file="amazon_summaries.json"):
-#     summaries = []
-
-#     with open(jsonl_file, 'r') as f:
-#         for line in f:
-#             item = json.loads(line)
-#             title = item["title"]
-#             content = item["content"]
-
-#             prompt = f"Summarize the following Amazon product in one or two sentences:\n\nTitle: {title}\nDescription: {content}"
-
-#             response = ollama.chat(
-#                 model="llama2",  # ou 'llama3', 'mistral', dependendo do que você tiver baixado
-#                 messages=[
-#                     {"role": "system", "content": "You are a helpful assistant that summarizes products."},
-#                     {"role": "user", "content": prompt}
-#                 ]
-#             )
-
-#             summary_text = response["message"]["content"].strip()
-
-#             summaries.append({
-#                 "title": title,
-#                 "content": content,
-#                 "summary": summary_text
-#             })
-
-#     with open(output_file, 'w') as out:
-#         json.dump({"amazon_summaries": summaries}, out, indent=2)
-
-# # exemplo de chamada
-# summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/trn2.json")
-
-# !pip install huggingface_hub -q
-
-#!pip install transformers accelerate sentencepiece -q
-
-# from transformers import pipeline
-# import json
-
-# # Carrega um modelo pequeno estilo LLaMA (pode trocar por outro mais forte, ex: meta-llama/Llama-2-7b-hf, mas vai pesar no Colab!)
-# summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-
-# def summarize_amazon(jsonl_file, output_file="amazon_summaries.json"):
-#     summaries = []
-
-#     with open(jsonl_file, 'r') as f:
-#         for line in f:
-#             item = json.loads(line)
-#             title = item["title"]
-#             content = item["content"]
-
-#             text = f"Title: {title}\nDescription: {content}"
-#             summary = summarizer(text, max_length=50, min_length=15, do_sample=False)[0]["summary_text"]
-
-#             summaries.append({
-#                 "title": title,
-#                 "content": content,
-#                 "summary": summary
-#             })
-
-#     with open(output_file, 'w') as out:
-#         json.dump({"amazon_summaries": summaries}, out, indent=2)
-
-# # exemplo de chamada
-# summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/trn2.json")
-
 !pip install transformers accelerate sentencepiece -q
 
 from transformers import pipeline
@@ -257,162 +170,6 @@ def summarize_amazon(jsonl_file, output_file="amazon_summaries_stream.json", flu
 
 summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/tst2.json")
 
-# #!pip install transformers accelerate sentencepiece -q
-
-# from transformers import pipeline
-# import json
-
-# # Carregar modelo de sumarização (T5-base)
-# summarizer = pipeline("summarization", model="t5-base")
-
-# def summarize_amazon(jsonl_file, output_file="/content/drive/MyDrive/Tech Challenge 3/amazon_summaries_test.json", limit=5):
-#     summaries = []
-
-#     with open(jsonl_file, 'r') as f:
-#         for i, line in enumerate(f):
-#             if i >= limit:  # só processa os primeiros N itens
-#                 break
-#             item = json.loads(line)
-#             title = item["title"]
-#             content = item["content"]
-
-#             text = f"summarize: Title: {title}\nDescription: {content}"
-#             summary = summarizer(
-#                 text,
-#                 max_length=20,   # limite máximo de tokens no resumo
-#                 min_length=10,   # mínimo de tokens no resumo
-#                 do_sample=False
-#             )[0]["summary_text"]
-
-#             summaries.append({
-#                 "title": title,
-#                 "content": content,
-#                 "summary": summary
-#             })
-
-#     with open(output_file, 'w') as out:
-#         json.dump({"/content/drive/MyDrive/Tech Challenge 3/amazon_summaries": summaries}, out, indent=2)
-
-#     print(f"Arquivo salvo em {output_file}")
-
-# # exemplo de chamada (teste com 5 produtos)
-# summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/tst2.json", limit=5)
-
-"""***Executando Este***"""
-
-# #!pip install transformers accelerate sentencepiece -q
-
-# from transformers import pipeline
-# import json
-
-# # Carregar modelo de sumarização (T5-base)
-# summarizer = pipeline("summarization", model="t5-base")
-
-# def summarize_amazon(jsonl_file, output_file="/content/drive/MyDrive/Tech Challenge 3/amazon_summaries.json"):
-#     summaries = []
-
-#     with open(jsonl_file, 'r') as f:
-#         for line in f:
-#             item = json.loads(line)
-#             title = item["title"]
-#             content = item["content"]
-
-#             text = f"summarize: Title: {title}\nDescription: {content}"
-#             summary = summarizer(
-#                 text,
-#                 max_length=20,   # limite máximo de tokens no resumo
-#                 min_length=10,   # mínimo de tokens no resumo
-#                 do_sample=False
-#             )[0]["summary_text"]
-
-#             summaries.append({
-#                 "title": title,
-#                 "content": content,
-#                 "summary": summary
-#             })
-
-#     with open(output_file, 'w') as out:
-#         json.dump({"/content/drive/MyDrive/Tech Challenge 3/amazon_summaries": summaries}, out, indent=2)
-
-#     print(f"✅ Resumos gerados e salvos em {output_file}")
-
-# # Executar para todos os itens
-# summarize_amazon("/content/drive/MyDrive/Tech Challenge 3/tst2.json")
-
-# !pip install huggingface_hub -q
-
-# import json
-# from huggingface_hub import InferenceClient
-# from google.colab import userdata
-
-# # Criar cliente da API do HuggingFace
-# # Get the API key from Colab secrets
-# hf_api_key = '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' #userdata.get('HF_TOKEN')
-
-# if not hf_api_key:
-#     print("Error: Hugging Face API key not found in Colab secrets. Please add it as 'HF_TOKEN'.")
-# else:
-#     client = InferenceClient(api_key=hf_api_key)
-
-#     def summarize_news(news_file, output_file="news_summaries.json", model="meta-llama/Llama-2-7b-chat-hf"):
-#         # Carrega o conteúdo das notícias de um arquivo JSON
-#         try:
-#             with open(news_file, 'r') as file:
-#                 news_data = json.load(file)
-#                 # Check if 'news_content' key exists and is a list
-#                 if 'news_content' in news_data and isinstance(news_data['news_content'], list):
-#                     news_contents = news_data['news_content']
-#                 else:
-#                     print(f"Error: 'news_content' key not found or is not a list in {news_file}")
-#                     return
-#         except FileNotFoundError:
-#             print(f"Error: File not found at {news_file}")
-#             return
-#         except json.JSONDecodeError:
-#             print(f"Error: Could not decode JSON from {news_file}")
-#             return
-
-
-#         summaries = []
-
-#         for content in news_contents:
-#             prompt = f"Summarize the following news article in 2-3 sentences:\n\n{content}"
-
-#             try:
-#                 # Chama a Inference API do HuggingFace
-#                 response = client.text_generation(
-#                     model=model,
-#                     prompt=prompt,
-#                     max_new_tokens=120,
-#                     temperature=0.7
-#                 )
-
-#                 summary_text = response.strip()
-#                 print(summary_text)
-
-#                 summaries.append({
-#                     "story": content,
-#                     "summary": summary_text
-#                 })
-#             except Exception as e:
-#                 print(f"Error summarizing content: {e}")
-#                 summaries.append({
-#                     "story": content,
-#                     "summary": f"Error summarizing: {e}"
-#                 })
-
-
-#         # Salva os resultados em um arquivo JSON
-#         try:
-#             with open(output_file, 'w') as json_file:
-#                 json.dump({"news_summaries": summaries}, json_file, indent=2)
-#             print(f"✅ Resumos salvos em {output_file}")
-#         except IOError as e:
-#             print(f"Error saving summaries to {output_file}: {e}")
-
-
-#     # Exemplo de chamada
-#     summarize_news('/content/drive/MyDrive/news_contents.json')
 
 !pip install transformers datasets evaluate rouge_score sentencepiece -q
 
@@ -567,7 +324,7 @@ from transformers import pipeline
 summarizer = pipeline("summarization", model="/content/my-t5-amazon", tokenizer="/content/my-t5-amazon")
 
 # --------------------------
-# 🔸 1. Validação manual
+#  1. Validação manual
 # --------------------------
 def validate_summary(title, description, expected_summary=None):
     text = f"summarize: Title: {title}. Description: {description}"
@@ -600,7 +357,7 @@ validate_summary(
 )
 
 # --------------------------
-# 🔸 2. Validação automática com ROUGE
+#  2. Validação automática com ROUGE
 # --------------------------
 rouge = evaluate.load("rouge")
 
