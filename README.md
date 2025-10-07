@@ -4,6 +4,8 @@ da Pos Tech em IA para Devs da FIAP, 2025, conduzido pelo professor Carlos Arag�
 
 Flavio Luiz Vicco - RM 361664
 
+> Olá, pessoal! Eu sou o Flavio Vicco e hoje vou apresentar o Tech Challenge da Fase 2 da Pos Tech em IA para Devs da FIAP, 2025, conduzido pelo professor Sergio Polimante. Vou mostrar como aplicar um algoritmo genético para resolver o clássico jogo Resta 1, utilizando Python. Vamos juntos entender, na prática, cada passo dessa solução?
+
 # 🧩 Resumo da lógica de fine-tuning
 
 ### 1️⃣ Limpeza e formatação dos dados: transforma o dataset original em pares input → resumo.
