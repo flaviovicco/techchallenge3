@@ -4,7 +4,7 @@ da Pos Tech em IA para Devs da FIAP, 2025, conduzido pelo professor Carlos Arag�
 
 Flavio Luiz Vicco - RM 361664
 
-## 🧩 Resumo da lógica de fine-tuning
+# 🧩 Resumo da lógica de fine-tuning
 
 ### 1️⃣ Limpeza e formatação dos dados: transforma o dataset original em pares input → resumo.
 
