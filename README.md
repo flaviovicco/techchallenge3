@@ -6,7 +6,7 @@ Flavio Luiz Vicco - RM 361664
 
 🧩 Resumo da lógica de fine-tuning
 
-## 1️⃣ Limpeza e formatação dos dados: transforma o dataset original em pares input → resumo.
+# 1️⃣ Limpeza e formatação dos dados: transforma o dataset original em pares input → resumo.
 
 2️⃣ Geração automática de rótulos (resumos): usa um modelo pré-treinado (BART) para gerar exemplos de saída.
 
