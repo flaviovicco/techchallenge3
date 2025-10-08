@@ -4,6 +4,8 @@ da Pos Tech em IA para Devs da FIAP, 2025, conduzido pelo professor Carlos Arag�
 
 Flavio Luiz Vicco - RM 361664
 
+https://youtu.be/RQl69dSBtao
+
 > Olá, pessoal! Eu sou o Flavio Vicco e hoje vou apresentar o Tech Challenge da Fase 3 da Pos Tech em IA para Devs da FIAP, 2025, conduzido pelo professor Carlos Aragão. Vou mostrar como desenvolvi um pipeline completo de fine-tuning de um modelo de linguagem para gerar resumos automáticos de produtos da Amazon. Vamos entender como o programa funciona, desde o pré-processamento dos dados até o treinamento e avaliação do modelo.
 
 # 🧩 Resumo da lógica de fine-tuning
