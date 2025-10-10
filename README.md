@@ -16,12 +16,14 @@ O programa lê um arquivo JSON contendo descrições de produtos.
 Para otimizar o uso de memória, ele limita a leitura aos cem mil primeiros registros.
 Depois, o código cria um DataFrame com apenas as colunas importantes: o título e a descrição do produto.
 Linhas vazias ou duplicadas são removidas, garantindo que o modelo aprenda apenas com informações relevantes.
+
 <img width="234" height="131" alt="image" src="https://github.com/user-attachments/assets/53aa07e4-54b2-4bba-8c07-071c5d5b812a" />
 
 ### ✏️ 2️⃣ Exportar o Dataset limpo
 Com o conjunto de dados limpo, o próximo passo é salvar tudo em formato JSONL —
 um formato onde cada linha é um registro independente.
 Isso facilita o processamento de grandes volumes e é o padrão usado em treinamento nos modelos na OpenAI e Hugging Face.
+
 <img width="256" height="26" alt="image" src="https://github.com/user-attachments/assets/b411e27d-cc30-4145-8d9d-4d747d2f2b93" />
 
 ### 🤖 3️⃣ Geração de resumos automáticos com BART para gerar exemplos de saída.
@@ -47,12 +49,14 @@ O modelo T5-base é carregado e treinado com nossos dados.
 Definimos hiperparâmetros como número de épocas, tamanho do batch e diretório de logs.
 Usamos a métrica ROUGE, que mede a similaridade entre o resumo gerado e o real.
 
+<img width="904" height="153" alt="image" src="https://github.com/user-attachments/assets/4935d5ca-6b44-4ec0-9420-c4a0f86efe54" />
+
 ### 🧪 7️⃣ Avaliação: mede a qualidade dos resumos com a métrica ROUGE.
 Após o treinamento, testamos o modelo com exemplos reais.
 O código gera novos resumos e imprime o resultado decodificado.
 Primeiro testamos manualmente alguns produtos.
 Depois, avaliamos automaticamente usando o ROUGE — que nos dá um valor numérico da qualidade do resumo
-<img width="904" height="153" alt="image" src="https://github.com/user-attachments/assets/4935d5ca-6b44-4ec0-9420-c4a0f86efe54" />
+
 <img width="1810" height="476" alt="image" src="https://github.com/user-attachments/assets/568756eb-8eba-4ff6-913b-f4f41052d741" />
 
 ### 💾 8️⃣ Salvamento e reuso: salva o modelo afinado para uso futuro.
