@@ -45,13 +45,13 @@ O modelo T5-base é carregado e treinado com nossos dados.
 Definimos hiperparâmetros como número de épocas, tamanho do batch e diretório de logs.
 Usamos a métrica ROUGE, que mede a similaridade entre o resumo gerado e o real.
 
-### 🧪 5️⃣ Avaliação: mede a qualidade dos resumos com a métrica ROUGE.
+### 🧪 7️⃣ Avaliação: mede a qualidade dos resumos com a métrica ROUGE.
 Após o treinamento, testamos o modelo com exemplos reais.
 O código gera novos resumos e imprime o resultado decodificado.
 Primeiro testamos manualmente alguns produtos.
 Depois, avaliamos automaticamente usando o ROUGE — que nos dá um valor numérico da qualidade do resumo
 
-### 💾 7️⃣ Salvamento e reuso: salva o modelo afinado para uso futuro.
+### 💾 8️⃣ Salvamento e reuso: salva o modelo afinado para uso futuro.
 Por fim, o modelo é salvo e recarregado para validação.
 Primeiro testamos manualmente alguns produtos.
 Depois, avaliamos automaticamente usando o ROUGE — que nos dá um valor numérico da qualidade do resumo.
